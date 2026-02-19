@@ -1,64 +1,9 @@
 # import libraries
 import random as rd
+import ascii_art as aa
 
-# ASCII art from: https://www.asciiart.eu/
-stages = [r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
+stages = aa.hm_stages
+logo = aa.hm_logo
 
 # set number of available guesses
 guesses = 6
@@ -79,9 +24,8 @@ chosen_letters = []
 # temporary variable for the current chosen letter
 chosen_letter = ''
 
-# todo remove after debugging
-print(random_word)
-
+# # todo remove after debugging
+# print(random_word)
 
 # update user function for repeated code after choosing a letter
 def update_to_user():
@@ -89,7 +33,9 @@ def update_to_user():
     print(f"You have {guesses} guesses remaining: {blanks}")
 
 # welcome the user to the game
-print("Welcome to hangman!")
+print("Welcome to:")
+print(logo)
+
 # update the user of the guesses and current state of the game
 update_to_user()
 

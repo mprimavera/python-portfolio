@@ -1,34 +1,10 @@
 # import the random library
 import random as rd
+import ascii_art as aa
 
-# ascii art from https://www.asciiart.eu/
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
-
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
-
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
-
+rock = aa.rps_rock
+paper = aa.rps_paper
+scissors = aa.rps_scissors
 
 # set options to a list
 options = [rock, paper, scissors]

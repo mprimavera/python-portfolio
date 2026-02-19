@@ -209,3 +209,6 @@ __marimo__/
 
 # Preventing .idea/ files from being tracked
 .idea
+
+# Keep copied ASCII art from being tracked
+ascii_art.py
