@@ -1,8 +1,67 @@
 # import libraries
 import random as rd
 
+# ASCII art from: https://www.asciiart.eu/
+stages = [r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+
 # set number of available guesses
-guesses = 2
+guesses = 6
 
 # create a list of words to choose from for the game
 word_list = ["aardvark", "baboon", "camel"]
@@ -26,8 +85,8 @@ print(random_word)
 
 # update user function for repeated code after choosing a letter
 def update_to_user():
+    print(stages[guesses])
     print(f"You have {guesses} guesses remaining: {blanks}")
-
 
 # welcome the user to the game
 print("Welcome to hangman!")
@@ -68,6 +127,7 @@ while guesses != 0 and '_' in blanks:
 
         # determine if the player won
         if '_' not in blanks:
+            print(stages[guesses])
             print(f"You've Won The Game, the word is {blanks}!")
 
         else:
@@ -86,6 +146,7 @@ while guesses != 0 and '_' in blanks:
         # check if there are guesses remaining
         if guesses == 0:
             # if zero guesses left, print that the user has lost the game
+            print(stages[guesses])
             print(f"You have lost the game, the word was {random_word}!")
         else:
             # if guesses remaining is not equal to zero, print updated guesses and reprint blanks
