@@ -1,4 +1,4 @@
-from ascii_art import caesar_cypher_logo
+from ascii_art import caesar_cipher_logo
 
 # data--letters in alphabet
 letters = [
@@ -8,7 +8,7 @@ letters = [
 
 # print welcome logo
 print("Welcome to:")
-print(caesar_cypher_logo)
+print(caesar_cipher_logo)
 
 
 def cypher():
@@ -19,8 +19,6 @@ def cypher():
     shift = int(input("Type the shift number\n"))
     message_encrypted = ''
 
-    # if shift > 25
-
     # change shift direction if decode is selected
     if choice == 'decode':
         shift = 26 - shift
@@ -30,7 +28,6 @@ def cypher():
         while shift < -26:
             shift += 26
         shift = shift + 26
-
 
     # perform the shift and output the letters
     # get shift for each letter in the message
@@ -47,9 +44,9 @@ def cypher():
             # add the shift to the current position to get the position of the shifted letter
             shifted_letter = count + shift
 
-            # subtract 26 if the value is greater than the length of the alphabet to cycle back to the beginning of the alphabet
-            while shifted_letter >= 26:
-                shifted_letter -= 26
+            # modulo 26 the value so if it's greater than the length of the alphabet it will cycle back to
+            # the beginning of the alphabet
+            shifted_letter %= len(letters)
 
             # add the shifted letter to the encrypted message
             message_encrypted += letters[shifted_letter]
@@ -59,5 +56,7 @@ def cypher():
     play_again = input("Type 'yes' if you want to go again. Otherwise, type 'no'.\n").lower()
     if play_again == 'yes':
         cypher()
+    else:
+        print('Goodbye')
 
 cypher()
